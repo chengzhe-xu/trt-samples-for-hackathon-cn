@@ -25,13 +25,13 @@ import numpy as np
 class MnistData():
 
     def __init__(self, dataPath, isOneHot=False, randomSeed=97):
-        with open(dataPath + "train-images-idx3-ubyte.gz", "rb") as f:
+        with open(dataPath + "train/train-images-idx3-ubyte.gz", "rb") as f:
             self.trainImage = self.extractImage(f)
-        with open(dataPath + "train-labels-idx1-ubyte.gz", "rb") as f:
+        with open(dataPath + "train/train-labels-idx1-ubyte.gz", "rb") as f:
             self.trainLabel = self.extractLabel(f)
-        with open(dataPath + "t10k-images-idx3-ubyte.gz", "rb") as f:
+        with open(dataPath + "test/t10k-images-idx3-ubyte.gz", "rb") as f:
             self.testImage = self.extractImage(f)
-        with open(dataPath + "t10k-labels-idx1-ubyte.gz", "rb") as f:
+        with open(dataPath + "test/t10k-labels-idx1-ubyte.gz", "rb") as f:
             self.testLabel = self.extractLabel(f, isOneHot=isOneHot)
 
         self.isOneHot = isOneHot

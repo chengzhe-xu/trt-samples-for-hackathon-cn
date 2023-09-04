@@ -97,7 +97,7 @@ node14 = gs.Node("Softmax", "Softmax-14", inputs=[tensor13], outputs=[tensor14],
 graphNodeList.append(node14)
 
 tensor15 = gs.Variable("tensor-15", np.int64, None)
-node15 = gs.Node("Fuck", "ArgMax-15", inputs=[tensor14], outputs=[tensor15], attrs=OrderedDict([("axis", 1), ("keepdims", 0)]))
+node15 = gs.Node("ArgMax", "ArgMax-15", inputs=[tensor14], outputs=[tensor15], attrs=OrderedDict([("axis", 1), ("keepdims", 0)]))
 graphNodeList.append(node15)
 
 graph = gs.Graph(nodes=graphNodeList, inputs=[tensor0], outputs=[tensor15])

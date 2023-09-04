@@ -28,7 +28,7 @@ network = builder.create_network(1 << int(trt.NetworkDefinitionCreationFlag.EXPL
 profile = builder.create_optimization_profile()
 config = builder.create_builder_config()
 
-os.chdir("/w/gitlab/tensorrt-cookbook/02-API/ONNXParser")
+os.chdir("/home/chengzhexu/workspace/code_base/project-gravity/3rdparty/trt-samples-for-hackathon-cn/cookbook/02-API/ONNXParser")
 
 parser = trt.OnnxParser(network, logger)
 
@@ -36,9 +36,9 @@ parser = trt.OnnxParser(network, logger)
 print("parser.supports_operator('LayerNormalization') = %s" % parser.supports_operator("LayerNormalization"))
 
 # ?
-print("parser.sget_used_vc_plugin_libraries() = %s" % parser.get_used_vc_plugin_libraries())
+# print("parser.sget_used_vc_plugin_libraries() = %s" % parser.get_used_vc_plugin_libraries())
 
-if True:  # four equivalent methods to parse ONNX file
+if False:  # four equivalent methods to parse ONNX file
     res = parser.parse_from_file(onnxFile)  # parse from file
 else:
     with open(onnxFile, "rb") as model:
